@@ -1,0 +1,23 @@
+{
+  "name": "elm-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn start:elm & yarn start:css",
+    "start:elm": "elm-live src/Main.elm --output=dist/main.js --dir=dist --port=3000 --debug --pushstate",
+    "start:css": "postcss --watch -C styles/postcss.config.js -o dist/main.css styles/index.css",
+    "build": "yarn build:elm & yarn build:css",
+    "build:elm": "elm-make src/Main.elm --output=dist/main.js",
+    "build:css": "postcss -C styles/postcss.config.js -o dist/main.css styles/index.css"
+  },
+  "stylelint": {
+    "rules": {}
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "elm": "^0.18.0",
+    "elm-live": "^2.7.5",
+    "postcss-cli": "^4.1.1",
+    "tailwindcss": "^0.1.3"
+  }
+}
