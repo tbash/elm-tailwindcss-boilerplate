@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Tailwind exposing (..)
 
 
 ---- MODEL ----
@@ -35,8 +36,8 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "flex justify-center flex-col items-center" ]
-        [ img [ class " w-64", src "/media/logo.svg" ] []
+    div [ utilClasses [ Flex, JustifyCenter, FlexCol, ItemsCenter ] ]
+        [ img [ utilClass W64, src "/media/logo.svg" ] []
         , h1 [] [ text "Your Elm App is working!" ]
         ]
 
